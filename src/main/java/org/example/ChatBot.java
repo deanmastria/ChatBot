@@ -14,10 +14,12 @@ public class ChatBot {
             // Greeting the user (requirement 1)
             System.out.print("Hi there! I'm Mr. Chatbot! What's your name? ");
             String name = scanner.nextLine();
+            System.out.println();
 
             // Asking the user to repeat their name (requirement 2)
             System.out.print("Mind repeating your name one more time for me? So I don't forget!!! ");
             String repeatName = scanner.nextLine();
+            System.out.println();
 
             // Check if the repeated name matches the original name
             if (!name.equalsIgnoreCase(repeatName)) {
@@ -26,15 +28,16 @@ public class ChatBot {
                 continue;
             }
 
-            // Guess the user's age (requirement 3)
-            int age = bot.guessAge(scanner);
-            System.out.println();
+            // Guess the user's age and get the birth year (requirement 3)
+            int[] ageAndBirthYear = bot.guessAge(scanner);
+            int age = ageAndBirthYear[0];
+            int birthYear = ageAndBirthYear[1];
 
             // Tell a story about the user based on their birth year (Level 2 requirement)
-            bot.tellStory(name, age);
-            System.out.println();
+            bot.tellStory(name, birthYear);
+            System.out.println(); // give space between tellStory and outputDayPhrase
 
-            // Bot will output a phrase about the day of the week based on users input (Level 3 requirement)
+            // Bot will output a phrase about the day of the week based on user's input (Level 3 requirement)
             bot.weekDay(scanner);
             System.out.println();
 
@@ -48,10 +51,11 @@ public class ChatBot {
 
             System.out.println("Well, " + name + ", it was nice to talk to you. Hope to hear from you again sometime!");
             scanner.close();
-            break;
+            break; // Exit the loop after the conversation is done
         }
     }
-    private int guessAge(Scanner scanner) {
+
+    private int[] guessAge(Scanner scanner) {
         // Ask for the birth month and day with validation
         int birthMonth = 0;
         int birthDay = 0;
@@ -92,12 +96,6 @@ public class ChatBot {
         LocalDate birthdayThisYear = LocalDate.of(currentYear, birthMonth, birthDay);
         boolean birthdayPassed = currentDate.isAfter(birthdayThisYear) || currentDate.isEqual(birthdayThisYear);
 
-        // Debug statements to verify calculations
-        System.out.println("Debug: Current date: " + currentDate);
-        System.out.println("Debug: Birthday this year: " + birthdayThisYear);
-        System.out.println("Debug: Birthday passed: " + birthdayPassed);
-        System.out.println("Debug: Age guessed: " + age);
-
         // Adjust the birth year based on whether the user's birthday has passed this year
         int birthYear = birthdayPassed ? currentYear - age : currentYear - age - 1;
 
@@ -105,11 +103,8 @@ public class ChatBot {
         LocalDate birthDate = LocalDate.of(birthYear, birthMonth, birthDay);
         Period agePeriod = Period.between(birthDate, currentDate);
 
-        System.out.println("Debug: Birth date: " + birthDate);
-        System.out.println("Debug: Age period: " + agePeriod);
-
         System.out.println("You must be " + agePeriod.getYears() + " years, " + agePeriod.getMonths() + " months, and " + agePeriod.getDays() + " days old.");
-        return agePeriod.getYears();
+        return new int[]{agePeriod.getYears(), birthYear};
     }
 
     private int narrowDownAge(Scanner scanner) {
@@ -142,9 +137,8 @@ public class ChatBot {
         return lowerBound;
     }
 
-    private void tellStory(String name, int age) {
+    private void tellStory(String name, int birthYear) {
         PopCultureReferences popCultureReferences = new PopCultureReferences();
-        int birthYear = LocalDate.now().getYear() - age;
         String reference = popCultureReferences.getReference(birthYear);
 
         System.out.println("Wow, " + name + "! You were born in " + birthYear + ". That was the year of " + reference + " It's amazing to see how much has happened since then!");
@@ -174,17 +168,17 @@ public class ChatBot {
             scanner.nextLine(); // Consume newline
             switch (answer) {
                 case 1:
-                    System.out.println("Wrong, please try again!");
+                    System.out.println("Wrong. Try again!");
                     break;
                 case 2:
                     System.out.println("That's Right!");
                     correctAnswer = true;
                     break;
                 case 3:
-                    System.out.println("Wrong, please try again!");
+                    System.out.println("Wrong. Try again!");
                     break;
                 case 4:
-                    System.out.println("Wrong, please try again!");
+                    System.out.println("Wrong. Try again!");
                     break;
                 default:
                     System.out.println("Enter a number between 1-4 to answer!");
