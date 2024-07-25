@@ -1,0 +1,141 @@
+package org.example;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class PopCultureReferences {
+    private Map<Integer, String> references;
+
+    public PopCultureReferences() {
+        references = new HashMap<>();
+        initializeReferences();
+    }
+
+    private void initializeReferences() {
+        references.put(1904, "the debut of the St. Louis World's Fair.");
+        references.put(1905, "Albert Einstein publishing his theory of relativity.");
+        references.put(1906, "the San Francisco earthquake.");
+        references.put(1907, "Oklahoma becoming the 46th state.");
+        references.put(1908, "the introduction of the Ford Model T.");
+        references.put(1909, "Robert Peary claiming to have reached the North Pole.");
+        references.put(1910, "Halley's Comet passing Earth.");
+        references.put(1911, "the Mona Lisa being stolen from the Louvre.");
+        references.put(1912, "the sinking of the Titanic.");
+        references.put(1913, "the first assembly line introduced by Henry Ford.");
+        references.put(1914, "the start of World War I.");
+        references.put(1915, "the release of D.W. Griffith's 'The Birth of a Nation.'");
+        references.put(1916, "the National Park Service being established.");
+        references.put(1917, "the United States entering World War I.");
+        references.put(1918, "the end of World War I and the Spanish flu pandemic.");
+        references.put(1919, "the ratification of the 19th Amendment, giving women the right to vote.");
+        references.put(1920, "Prohibition beginning in the United States.");
+        references.put(1921, "the first Miss America Pageant.");
+        references.put(1922, "the discovery of King Tutankhamun's tomb.");
+        references.put(1923, "the Hollywood sign being erected (originally 'Hollywoodland').");
+        references.put(1924, "the first Winter Olympics held in Chamonix, France.");
+        references.put(1925, "the release of 'The Great Gatsby' by F. Scott Fitzgerald.");
+        references.put(1926, "the launch of the first liquid-fueled rocket by Robert Goddard.");
+        references.put(1927, "Charles Lindbergh's solo transatlantic flight.");
+        references.put(1928, "Mickey Mouse debuting in 'Steamboat Willie.'");
+        references.put(1929, "the release of 'The Sound and the Fury' by William Faulkner.");
+        references.put(1930, "the discovery of Pluto.");
+        references.put(1931, "the completion of the Empire State Building.");
+        references.put(1932, "Amelia Earhart's solo flight across the Atlantic.");
+        references.put(1933, "the end of Prohibition in the United States.");
+        references.put(1934, "Donald Duck's debut in 'The Wise Little Hen.'");
+        references.put(1935, "the release of the board game Monopoly.");
+        references.put(1936, "Jesse Owens winning four gold medals at the Berlin Olympics.");
+        references.put(1937, "the publication of J.R.R. Tolkien's 'The Hobbit.'");
+        references.put(1938, "Superman's first appearance in Action Comics #1.");
+        references.put(1939, "the release of 'The Wizard of Oz' and 'Gone with the Wind.'");
+        references.put(1940, "Bugs Bunny's debut in 'A Wild Hare.'");
+        references.put(1941, "Disney's 'Dumbo' being released.");
+        references.put(1942, "the release of the film 'Casablanca.'");
+        references.put(1943, "the first Little Golden Book being published.");
+        references.put(1944, "the debut of Thomas the Tank Engine.");
+        references.put(1945, "the end of World War II.");
+        references.put(1946, "the establishment of the United Nations.");
+        references.put(1947, "the first televised World Series.");
+        references.put(1948, "the introduction of the Polaroid camera.");
+        references.put(1949, "the founding of NATO.");
+        references.put(1950, "the 'Peanuts' comic strip by Charles Schulz debuting.");
+        references.put(1951, "the first broadcast of 'I Love Lucy.'");
+        references.put(1952, "Elizabeth II becoming Queen of the United Kingdom.");
+        references.put(1953, "the first issue of 'TV Guide' being published.");
+        references.put(1954, "the Supreme Court's Brown v. Board of Education decision.");
+        references.put(1955, "the opening of Disneyland in California.");
+        references.put(1956, "Elvis Presley's first appearance on 'The Ed Sullivan Show.'");
+        references.put(1957, "the launch of Sputnik 1 by the Soviet Union.");
+        references.put(1958, "the creation of NASA.");
+        references.put(1959, "Alaska and Hawaii becoming U.S. states.");
+        references.put(1960, "the first televised presidential debates (Kennedy vs. Nixon).");
+        references.put(1961, "Yuri Gagarin becoming the first human in space.");
+        references.put(1962, "the first appearance of Spider-Man in Marvel Comics.");
+        references.put(1963, "the debut of 'Doctor Who' on the BBC.");
+        references.put(1964, "the Beatles' appearance on 'The Ed Sullivan Show.'");
+        references.put(1965, "'A Charlie Brown Christmas' airing for the first time.");
+        references.put(1966, "'Star Trek' premiering on television.");
+        references.put(1967, "the Summer of Love.");
+        references.put(1968, "'Mister Rogers' Neighborhood' debuting on PBS.");
+        references.put(1969, "the Apollo 11 moon landing.");
+        references.put(1970, "Earth Day being first celebrated.");
+        references.put(1971, "the debut of 'Willy Wonka & the Chocolate Factory.'");
+        references.put(1972, "the release of Atari's 'Pong,' the first commercial video game.");
+        references.put(1973, "the end of the Vietnam War.");
+        references.put(1974, "Hank Aaron breaking Babe Ruth's home run record.");
+        references.put(1975, "the release of 'Jaws,' the first summer blockbuster.");
+        references.put(1976, "America's bicentennial celebration.");
+        references.put(1977, "the release of 'Star Wars: Episode IV - A New Hope.'");
+        references.put(1978, "'Grease' becoming a cultural phenomenon.");
+        references.put(1979, "the release of 'The Muppet Movie.'");
+        references.put(1980, "the release of the Pac-Man video game.");
+        references.put(1981, "the launch of MTV.");
+        references.put(1982, "the release of 'E.T. the Extra-Terrestrial.'");
+        references.put(1983, "the debut of the video game 'Mario Bros.'");
+        references.put(1984, "the release of 'Ghostbusters.'");
+        references.put(1985, "'Back to the Future' hitting theaters.");
+        references.put(1986, "the founding of Pixar Animation Studios.");
+        references.put(1987, "'The Simpsons' debuting as shorts on 'The Tracey Ullman Show.'");
+        references.put(1988, "'Who Framed Roger Rabbit' blending live-action and animation.");
+        references.put(1989, "the release of Disney's 'The Little Mermaid.'");
+        references.put(1990, "the release of 'Home Alone.'");
+        references.put(1991, "the premiere of 'Beauty and the Beast.'");
+        references.put(1992, "the Mall of America opening in Minnesota.");
+        references.put(1993, "the release of 'Jurassic Park.'");
+        references.put(1994, "'The Lion King' becoming a Disney classic.");
+        references.put(1995, "the release of 'Toy Story,' the first full-length computer-animated film.");
+        references.put(1996, "the launch of the Nintendo 64.");
+        references.put(1997, "'Harry Potter and the Philosopher's Stone' being published.");
+        references.put(1998, "the release of 'Mulan.'");
+        references.put(1999, "the debut of 'SpongeBob SquarePants' on Nickelodeon.");
+        references.put(2000, "the release of 'The Sims' video game.");
+        references.put(2001, "the launch of the first iPod.");
+        references.put(2002, "the release of 'Spider-Man' starring Tobey Maguire.");
+        references.put(2003, "'Finding Nemo' swimming into theaters.");
+        references.put(2004, "the founding of Facebook.");
+        references.put(2005, "the launch of YouTube.");
+        references.put(2006, "'High School Musical' airing on Disney Channel.");
+        references.put(2007, "the release of the first iPhone.");
+        references.put(2008, "the release of 'Iron Man,' launching the Marvel Cinematic Universe.");
+        references.put(2009, "'Up' being released by Pixar.");
+        references.put(2010, "the release of the first iPad.");
+        references.put(2011, "the final Harry Potter film being released.");
+        references.put(2012, "the Curiosity Rover landing on Mars.");
+        references.put(2013, "'Frozen' becoming a cultural phenomenon.");
+        references.put(2014, "the ALS Ice Bucket Challenge going viral.");
+        references.put(2015, "the release of 'Star Wars: The Force Awakens.'");
+        references.put(2016, "Pokémon GO becoming a global phenomenon.");
+        references.put(2017, "'The Greatest Showman' hitting theaters.");
+        references.put(2018, "'Black Panther' making a cultural impact.");
+        references.put(2019, "'Avengers: Endgame' becoming the highest-grossing film.");
+        references.put(2020, "'Animal Crossing: New Horizons' becoming a cultural phenomenon.");
+        references.put(2021, "The 'Friends' reunion special airs, bringing the beloved cast back together.");
+        references.put(2022, "\"Stranger Things\" Season 4 becomes a major hit on Netflix.");
+        references.put(2023, "The 'Super Mario Bros. Movie' becomes a box office hit.");
+        references.put(2024, "The 'Minecraft' movie is anticipated to be released, generating significant excitement.");
+    }
+
+    public String getReference(int year) {
+        return references.getOrDefault(year, "a significant event.");
+    }
+}
