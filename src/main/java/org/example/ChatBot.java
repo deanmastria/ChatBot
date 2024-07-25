@@ -81,7 +81,7 @@ public class ChatBot {
                 scanner.next(); // Clear invalid input
             }
         }
-        scanner.nextLine();
+        scanner.nextLine(); // Consume newline
 
         // Narrow down the age range with a series of questions
         int age = narrowDownAge(scanner);
@@ -92,12 +92,21 @@ public class ChatBot {
         LocalDate birthdayThisYear = LocalDate.of(currentYear, birthMonth, birthDay);
         boolean birthdayPassed = currentDate.isAfter(birthdayThisYear) || currentDate.isEqual(birthdayThisYear);
 
+        // Debug statements to verify calculations
+        System.out.println("Debug: Current date: " + currentDate);
+        System.out.println("Debug: Birthday this year: " + birthdayThisYear);
+        System.out.println("Debug: Birthday passed: " + birthdayPassed);
+        System.out.println("Debug: Age guessed: " + age);
+
         // Adjust the birth year based on whether the user's birthday has passed this year
         int birthYear = birthdayPassed ? currentYear - age : currentYear - age - 1;
 
         // Calculate exact age to the day
         LocalDate birthDate = LocalDate.of(birthYear, birthMonth, birthDay);
         Period agePeriod = Period.between(birthDate, currentDate);
+
+        System.out.println("Debug: Birth date: " + birthDate);
+        System.out.println("Debug: Age period: " + agePeriod);
 
         System.out.println("You must be " + agePeriod.getYears() + " years, " + agePeriod.getMonths() + " months, and " + agePeriod.getDays() + " days old.");
         return agePeriod.getYears();
@@ -109,6 +118,17 @@ public class ChatBot {
 
         while (upperBound - lowerBound > 1) {
             int midPoint = (lowerBound + upperBound) / 2;
+            if (midPoint >= 119) {
+                System.out.println("Are you older than 119? (yes/no)");
+                boolean older = scanner.nextLine().trim().equalsIgnoreCase("yes");
+                if (older) {
+                    System.out.println("No way you're older than 120!");
+                    return 120;
+                } else {
+                    upperBound = 119;
+                    break;
+                }
+            }
             System.out.println("Are you older than " + midPoint + "? (yes/no)");
             boolean older = scanner.nextLine().trim().equalsIgnoreCase("yes");
 
@@ -154,21 +174,20 @@ public class ChatBot {
             scanner.nextLine(); // Consume newline
             switch (answer) {
                 case 1:
-                    System.out.println("Wrong");
+                    System.out.println("Wrong, please try again!");
                     break;
                 case 2:
                     System.out.println("That's Right!");
                     correctAnswer = true;
                     break;
                 case 3:
-                    System.out.println("Wrong");
+                    System.out.println("Wrong, please try again!");
                     break;
                 case 4:
-                    System.out.println("Wrong");
+                    System.out.println("Wrong, please try again!");
                     break;
                 default:
                     System.out.println("Enter a number between 1-4 to answer!");
-                    break;
             }
         }
     }
